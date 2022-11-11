@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG to PNG</title>
+
+    <link rel="preload stylesheet" as="style" href="./css/styles.css">
+
+    <script async src="./js/scripts.js"></script>
+</head>
+
+<body>
+    <section>
+        <h1>
+            SVG to PNG
+        </h1>
+
+        <div class="flex">
+            <textarea id="svg" rows="6" cols="50"></textarea>
+            <button type="button" class="first" id="load-svg">Load SVG</button>
+        </div>
+
+        <div class="view" id="preview-svg"></div>
+
+        <div class="flex">
+            Width: <input type="number" id="width" value="0" class="make-canvas"> Height: <input type="number" id="height" value="0" class="make-canvas">
+        </div>
+
+        <canvas class="view" id="canvas"></canvas>
+
+        <button type="button" id="save-png">Save SVG as PNG</button>
+    </section>
+</body>
+
+</html>
