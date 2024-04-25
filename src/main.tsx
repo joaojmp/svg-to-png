@@ -1,13 +1,27 @@
 import React from 'react';
 
+import { createHashRouter, RouterProvider } from 'react-router-dom';
+
 import ReactDOM from 'react-dom/client';
 
-import App from './App.tsx';
+import Svg from './routes/Svg';
+import Webp from './routes/Webp';
 
 import './index.css';
 
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <Svg />,
+  },
+  {
+    path: "/webp",
+    element: <Webp />,
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )
