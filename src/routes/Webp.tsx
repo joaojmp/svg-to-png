@@ -62,6 +62,15 @@ const Webp = () => {
                     canvas.width = img.width;
                     canvas.height = img.height;
                     ctx?.drawImage(img, 0, 0, img.width, img.height);
+
+                    let quality = 1;
+
+                    if (fileType === 'png') {
+                        quality = 0.9;
+                    } else if (fileType === 'jpg') {
+                        quality = 0.8;
+                    }
+
                     canvas.toBlob(blob => {
                         if (blob) {
                             const link = document.createElement('a');
@@ -73,7 +82,7 @@ const Webp = () => {
                         } else {
                             reject(new Error('Failed to convert image to blob.'));
                         }
-                    }, `image/${fileType}`);
+                    }, `image/${fileType}`, quality);
                 };
                 img.onerror = () => {
                     reject(new Error('Failed to load image.'));
@@ -86,11 +95,10 @@ const Webp = () => {
         }
     };
 
-
     return (
         <Layout>
             <section className="container flex flex-col items-center justify-center my-8">
-                <h1 className="font-bold text-3xl mb-10">Converter imagens para .{fileType}</h1>
+                <h1 className="font-bold text-3xl mb-10">Converter imagens para {fileType.toUpperCase()}</h1>
                 <div onDrop={handleDrop} onDragOver={handleDragOver} className="w-full border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center p-4 min-h-52 relative">
                     {images.length > 0 && (
                         <div className="grid grid-cols-5 gap-4 relative z-10">
@@ -119,7 +127,7 @@ const Webp = () => {
                         </select>
                     </div>
                     <button className="border border-black rounded-md px-5 py-2 font-bold text-white bg-black hover:text-black hover:bg-white transition-all" onClick={saveImages}>
-                        Salvar imagens .{fileType}
+                        Salvar imagens em {fileType.toUpperCase()}
                     </button>
                 </div>
             </section>

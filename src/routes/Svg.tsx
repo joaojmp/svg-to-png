@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Layout from "../layout/Layout";
 
 const Svg = () => {
-    const [fileType, setFileType] = useState<"png" | "jpg" | "webp">("png");
+    const [fileType, setFileType] = useState<"webp" | "png" | "jpg">("webp");
     const [svgText, setSvgText] = useState("");
     const [sizes, setSizes] = useState({
         width: 16,
@@ -159,10 +159,10 @@ const Svg = () => {
 
                 <div className="flex flex-col mt-4">
                     <label htmlFor="type" className="font-medium text-sm mb-2">Tipo do arquivo:</label>
-                    <select id="type" className="rounded-md p-2 mb-4" onChange={(e) => setFileType(e.target.value as "png" | "jpg" | "webp")}>
+                    <select id="type" className="rounded-md p-2 mb-4" onChange={(e) => setFileType(e.target.value as "webp" | "png" | "jpg")}>
+                        <option value="webp">WEBP</option>
                         <option value="png">PNG</option>
                         <option value="jpg">JPG</option>
-                        <option value="webp">WEBP</option>
                     </select>
                 </div>
 
