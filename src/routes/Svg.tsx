@@ -125,7 +125,7 @@ const Svg = () => {
         <Layout>
             <section className="container flex flex-col items-center justify-center my-8">
                 <h1 className="font-bold text-3xl mb-4">
-                    SVG para {fileType.toUpperCase()}
+                    Converter SVG para {fileType.toUpperCase()}
                 </h1>
 
                 <div className="grid">

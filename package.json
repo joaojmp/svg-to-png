@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/joaojmp/svg-to-png#readme",
   "dependencies": {
+    "browser-image-compression": "^2.0.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.3.0",

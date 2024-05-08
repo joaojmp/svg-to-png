@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client';
 
 import Svg from './routes/Svg';
 import Webp from './routes/Webp';
+import Compress from './routes/Compress';
 
 import './index.css';
 
@@ -17,6 +18,10 @@ const router = createHashRouter([
   {
     path: "/webp",
     element: <Webp />,
+  },
+  {
+    path: "/compress",
+    element: <Compress />,
   },
 ]);
 

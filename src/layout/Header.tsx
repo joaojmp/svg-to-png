@@ -4,11 +4,14 @@ const Header = () => {
     return (
         <header className="w-full p-5 bg-green-900">
             <ul className="flex gap-5">
-                <li className={`text-white font-medium transition-all hover:text-green-500 ${location.hash === "#/" ? "!text-green-500" : ""}`}>
+                <li className={`text-white font-medium transition-all hover:text-green-500 ${location.hash === "/" || location.hash === "#/" ? "!text-green-500" : ""}`}>
                     <Link to="/" relative="path">Converter SVG</Link>
                 </li>
                 <li className={`text-white font-medium transition-all hover:text-green-500 ${location.hash === "#/webp" ? "!text-green-500" : ""}`}>
                     <Link to="/webp" relative="path">Converter imagem</Link>
+                </li>
+                <li className={`text-white font-medium transition-all hover:text-green-500 ${location.hash === "#/compress" ? "!text-green-500" : ""}`}>
+                    <Link to="/compress" relative="path">Comprimir imagem</Link>
                 </li>
             </ul>
         </header>

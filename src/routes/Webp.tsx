@@ -114,7 +114,7 @@ const Webp = () => {
                     )}
                     <input type="file" accept="image/*" onChange={handleInputChange} className="hidden" id="fileInput" multiple />
                     <label htmlFor="fileInput" className="absolute w-full h-full flex items-center justify-center text-lg font-medium">
-                        {images.length === 0 ? 'Arraste e solte as imagens aqui' : ''}
+                        {images.length === 0 ? 'Arraste e solte as imagens aqui ou clique para selecionar' : ''}
                     </label>
                 </div>
                 <div className="text-center mt-10">
